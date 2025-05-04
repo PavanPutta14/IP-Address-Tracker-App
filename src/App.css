@@ -1,61 +1,144 @@
+/* General body styling */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   transition: background-color 0.5s, color 0.5s;
+  width: 100%;
 }
 
+/* Light mode styling */
 body.light-mode {
   background-color: #ffffff;
   color: #000000;
 }
 
+/* Dark mode styling */
 body.dark-mode {
   background-color: #121212;
   color: #ffffff;
 }
 
+/* Search container styling */
 .search-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin: 20px;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 10px;
 }
 
+/* Input field styling */
 .search-container input[type="text"] {
-  width: 1200px; 
+  flex-grow: 1;
   padding: 15px;
-  font-size: 20px;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  margin-right: 10px; 
+  margin-right: 0;
+  box-sizing: border-box;
 }
 
+/* Search button styling */
+.search-container button {
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+  background-color: red;
+}
+
+/* Toggle button styling */
 .toggle-button {
   cursor: pointer;
   background: none;
   border: none;
-  padding: 5px;
+  padding: 10px;
   color: inherit;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 20px;
 }
 
-.info {
+/* General information and map styling */
+.info, .map {
   margin: 20px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
-.map {
-  margin: 20px;
-  font-size: 18px;
-}
-
+/* Button styling */
 button {
   cursor: pointer;
   padding: 5px;
   background: none;
   border: none;
   color: inherit;
-}  
+}
+
+/* Mobile and tablet responsive adjustments */
+@media (max-width: 768px) {
+  .search-container {
+    gap: 5px;
+  }
+
+  .search-container input[type="text"] {
+    font-size: 14px;
+  }
+
+  .search-container button {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .toggle-button {
+    padding: 8px;
+    font-size: 18px;
+  }
+
+  .info, .map {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  .search-container {
+    gap: 3px;
+  }
+
+  .search-container input[type="text"] {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .search-container button {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .toggle-button {
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  .info, .map {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
